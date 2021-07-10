@@ -1,0 +1,26 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main(){
+    int n,l,r,v,t,a[100000]={0},i,m=0;
+    cin>>n>>t;
+    while(t--){
+        cin>>l>>r>>v;
+        a[l-1]+=v;
+        a[r]-=v;
+    }
+    for(i=1;i<n;i++)
+        a[i]+=a[i-1]; //Computing the cumulative sum till i.
+    for(i=0;i<n;i++)
+        a[i]+=i+1;
+    for(i=0;i<n;i++)
+        if(a[i]>m)
+            m=a[i];
+    cout<<m;
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    return 0;
+}
+
