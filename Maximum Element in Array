@@ -21,9 +21,10 @@ int main() {
         cin>>l>>r>>v;
         solve(a,l,r,v);
     }
+    
     m=a[0];
     for(i=1;i<n;i++)
-        if(a[i]>m)
+        if(a[i]>m) //Finding Maximum Element 
             m=a[i];
     cout<<m;
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
